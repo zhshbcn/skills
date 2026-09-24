@@ -17,7 +17,7 @@ description: 将符合固定测试用例层级的 Markdown 文件转换为本地
 
 ## XMind 依赖
 
-使用 `xmind-file` 技能，并遵循其当前的安装、认证和交付要求。先确认：
+使用全局安装的 XMind CLI 和其内置的 `xmind-file` 技能，并遵循当前的认证和交付要求。该 skill 不负责安装自身或安装 CLI。开始转换前先确认：
 
 ```bash
 xmind --version
@@ -25,14 +25,7 @@ xmind auth status
 xmind skill list
 ```
 
-如果 CLI 或 `xmind-file` 技能不可用，按 [XMind CLI 官方 README](https://github.com/xmindltd/xmind-cli/blob/main/README.md) 安装：
-
-```bash
-npm install -g @xmindltd/xmind-cli
-npx skills add xmindltd/xmind-cli -y
-```
-
-若认证状态显示未登录，运行 `xmind auth login`，让用户在浏览器中完成授权后再继续。
+如果全局 `xmind` 命令不可用，请先参考仓库 README 的安装顺序完成全局安装，不要在此处改用局部依赖。若认证状态显示未登录，运行 `xmind auth login cn` 或 `xmind auth login global`，让用户在浏览器中完成授权后再继续。
 
 ## 转换流程
 
@@ -48,5 +41,5 @@ npx skills add xmindltd/xmind-cli -y
 
 ## 边界
 
-- 仅使用 `recipe/quick-map` 生成测试用例 XMind 文件。
-- 只通过 XMind CLI 创建和校验 `.xmind`；不要伪造或手写 XMind 压缩包。
+- 仅使用 `recipe/quick-map` 生成测试用例 XMind。
+- 只通过全局 XMind CLI 创建和校验 `.xmind`；不要伪造或手写 XMind 压缩包。
