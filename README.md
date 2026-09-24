@@ -14,6 +14,18 @@
 | [`testcase-design-markdown`](./testcase-design-markdown/) | 根据需求设计固定层级的测试用例，并输出可评审、可导入 XMind 的 Markdown 文件。 |
 | [`testcase-markdown-to-xmind`](./testcase-markdown-to-xmind/) | 将符合约定层级的测试用例 Markdown 转换为本地 `.xmind` 文件。 |
 
+## 安装 `testcase-markdown-to-xmind`
+
+`testcase-markdown-to-xmind` 依赖全局可用的 XMind CLI。请按以下顺序安装：
+
+```bash
+npm install -g @xmindltd/xmind-cli
+xmind --version
+npx skills add https://github.com/zhshbcn/skills --skill testcase-markdown-to-xmind -y
+```
+
+`npx skills add` 只负责安装 skill，不会安装 XMind CLI。如果 `npm install -g` 需要系统权限，请在终端中完成权限升级后再继续。
+
 ## 使用说明
 
 在 Codex 对话中可通过 `$<skill 名称>` 显式调用 skill；满足 skill 描述的任务也可被自动匹配。
