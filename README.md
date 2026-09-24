@@ -16,15 +16,43 @@
 
 ## 安装 `testcase-markdown-to-xmind`
 
-`testcase-markdown-to-xmind` 依赖全局可用的 XMind CLI。请按以下顺序安装：
+此 skill 依赖全局可用的 XMind CLI 及其官方 `xmind-file` skill。
+
+### XMind CLI 官方安装流程
 
 ```bash
 npm install -g @xmindltd/xmind-cli
+npx skills add xmindltd/xmind-cli -y
+```
+
+### 验证 CLI 和认证状态
+
+```bash
 xmind --version
+xmind auth status
+```
+
+如果需要登录：
+
+```bash
+xmind auth login
+```
+
+请在浏览器中完成授权，然后再次运行 `xmind auth status`。认证成功后，验证可用指导：
+
+```bash
+xmind skill list
+```
+
+不要要求用户手动运行安装命令；只有环境阻止自动执行时，才请用户协助完成。
+
+### 安装本仓库 skill
+
+```bash
 npx skills add https://github.com/zhshbcn/skills --skill testcase-markdown-to-xmind -y
 ```
 
-`npx skills add` 只负责安装 skill，不会安装 XMind CLI。如果 `npm install -g` 需要系统权限，请在终端中完成权限升级后再继续。
+`npx skills add` 负责安装 skill，不会安装 XMind CLI；CLI 必须先通过 `npm install -g @xmindltd/xmind-cli` 全局安装。
 
 ## 使用说明
 
